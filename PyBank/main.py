@@ -36,7 +36,7 @@ with open(csvpath) as csvfile:
     profit_change = [profit_loss[i] - profit_loss[i-1] for i in range(len(profit_loss))] 
     
     #And then the average of those changes
-    avg_change = round((profit_loss[-1] - profit_loss[0])/ total_months , 2)
+    avg_change = round((profit_loss[-1] - profit_loss[0])/ (total_months -1) , 2)
 
     # Calculate he greatest increase in profits (date and amount) over the entire period
     ziplist = dict(zip(month, profit_change))
